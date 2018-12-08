@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center p-3">
+      <h2>ngrx store state test</h2>
+    </div>
+    <div class="col-md-6 pt-4">
+      <p style="font-size: 18px;">Current Count: <b>{{ count$ | async }}</b></p>
+    </div>
+    <div class="col-md-6 pt-4">
+      <button (click)="increment()" class="btn btn-outline-primary mr-1">Increment</button>
+      <button (click)="decrement()" class="btn btn-outline-primary">Decrement</button><br/>
+      <button (click)="reset()" class="btn btn-outline-dark mt-1">Reset Counter</button>
+    </div>
+  </div>
+</div>
