@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-4">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+        <div class="form-group">
+          <input formControlName="name" placeholder="Your name" class="form-control">
+
+          <p>Your choosen name: {{ myForm.get('name').value }}</p>
+          <div *ngIf="myForm.get('name').hasError('required')">
+            Oops, please provide a name!
+          </div>
+
+        </div>
+        <div class="form-group">
+          <input formControlName="email" placeholder="Your email" class="form-control">
+
+          <div *ngIf="myForm.controls.email.hasError('pattern')">
+            Oops, wrong pattern buddy!
+          </div>
+        </div>
+        <div class="form-group">
+          <input formControlName="message" placeholder="Your message" class="form-control">
+          <div *ngIf="myForm.controls.message.errors?.minlength">
+            Write something longer please!
+          </div>
+        </div>
+          <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
